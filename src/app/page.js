@@ -1,11 +1,10 @@
-import FlightDetails from '@/components/flight-details';
+import Booking from "@/components/booking";
 
 const Page = () => {
   return (
-    <div>
-      <FlightDetails flight="Flight details" />
-    </div>
+      <Booking />
+    
   );
-}
+};
 
 export default Page;

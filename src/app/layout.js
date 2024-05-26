@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={murecho.className}>
         <Navbar />
-        {children}
+        <div className="h-screen">
+          <div className="h-full pt-[84px] pb-4">{children}</div>
+        </div>
       </body>
     </html>
   );
