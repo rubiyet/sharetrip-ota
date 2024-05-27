@@ -1,10 +1,5 @@
 import Booking from "@/components/booking";
 
-const Page = () => {
-  return (
-      <Booking />
-    
-  );
-};
+const Page = () => <Booking />
 
 export default Page;
