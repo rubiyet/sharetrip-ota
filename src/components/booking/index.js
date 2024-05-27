@@ -20,7 +20,7 @@ const breadcrumbs = [
 
 export default function Home() {
   return (
-    <div className="flex w-9/12 m-auto h-full space-x-6">
+    <div className="flex xl:w-9/12 lg:w-10/12 w-11/12 m-auto h-full lg:space-x-6">
       <Filters />
       <div className="overflow-y-auto grow pt-1 space-y-5">
         <Breadcrumbs breadcrumbs={breadcrumbs} />
