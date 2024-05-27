@@ -1,5 +1,6 @@
 import { BsDot } from "react-icons/bs";
 import { HiArrowRight } from "react-icons/hi";
+import Image from "next/image";
 
 const FlightDetailsCard = ({ flight }) => {
   return (
@@ -28,35 +29,152 @@ const FlightDetailsCard = ({ flight }) => {
           {flight.totalDuration}
         </div>
       </div>
-      <div className="flex justify-between items-center bg-white px-4 py-5 rounded-b-lg">
+      <div className="bg-white px-4 py-5 rounded-b-lg space-y-3">
         <div className="flex items-center space-x-3 w-full">
-          <div className="flex items-center justify-center w-8 h-9">
-            <svg
-              width="14"
-              height="20"
-              viewBox="0 0 14 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse
-                opacity="0.5"
-                cx="7"
-                cy="18"
-                rx="4"
-                ry="2"
-                fill="#9BA6B2"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M7.00377 0C10.7135 0.0180664 13.75 3.14514 13.75 7C13.75 9.18384 12.805 11.3662 11.5846 12.8939L11.4998 13L7.55324 17.7051C7.53394 17.7295 7.51369 17.7527 7.4925 17.7744C7.47414 17.7932 7.45531 17.811 7.43553 17.8278C7.39127 17.8654 7.34419 17.8975 7.29428 17.9233C7.27968 17.9312 7.26461 17.9385 7.24908 17.9451L7.218 17.9575L7.18504 17.9691C7.12054 17.9896 7.05462 18 6.98823 18C6.88323 18 6.77917 17.974 6.68218 17.9233C6.58519 17.8727 6.49714 17.7986 6.42322 17.7051L2.50016 13L2.40081 12.8755C1.18227 11.3513 0.25 9.18445 0.25 7C0.25 3.13403 3.27187 0 7.00377 0ZM7 9C8.5533 9 9.8125 7.7408 9.8125 6.1875C9.8125 4.6342 8.5533 3.375 7 3.375C5.4467 3.375 4.1875 4.6342 4.1875 6.1875C4.1875 7.7408 5.4467 9 7 9Z"
-                fill="#9BA6B2"
-              />
-            </svg>
+          <div className="flex items-center justify-center">
+            <Image
+              src={"https://i.ibb.co/CJ37n1n/Location-Icon1.png"}
+              alt="icon"
+              width={32}
+              height={36}
+            />
           </div>
           <div className="bg-[#F5F7FA] text-[13px] leading-[18px] grow px-4 pt-[10px] pb-3 flex items-center justify-between">
-            <div className="font-medium space-x-1 text-[#1A2B3D]"><span>Departure from</span><span>{flight.fromCity}</span></div>
-            <div className="font-medium space-x-1 text-[#1A2B3D]"><span>{flight.fromTerminal}</span><span>:</span><span className="font-normal">{flight.fromTerminalName}</span></div>
+            <div className="font-medium space-x-1 text-[#1A2B3D]">
+              <span>Departure from</span>
+              <span>{flight.fromCity}</span>
+            </div>
+            <div className="font-medium space-x-1 text-[#5A6573]">
+              <span>{flight.fromTerminal}</span>
+              <span>:</span>
+              <span className="font-normal">{flight.fromTerminalName}</span>
+            </div>
+          </div>
+        </div>
+        {flight.trip.map((trip, index) => (
+          <div key={index}>
+            <div className="flex space-x-3">
+              <Image
+                src={"https://i.ibb.co/MRNy6RX/" + flight.airlines + ".png"}
+                alt={flight.airlines}
+                width={32}
+                height={32}
+              />
+              <div className="grid grid-cols-3 gap-3 grow">
+                <div className="">
+                  <div className="text-[#1A2B3D] font-semibold">
+                    {trip.departureIata} - {trip.arrivalIata}
+                  </div>
+                  <div className="text-[#5A6573] text-sm leading-5 font-normal">
+                    {trip.duration}
+                  </div>
+                </div>
+                <div className="">
+                <div className="text-[#1A2B3D] font-semibold">
+                    {trip.departureTime}
+                  </div>
+                  <div className="text-[#5A6573] text-sm leading-5 font-normal">
+                    {trip.departureDate}
+                  </div>
+                </div>
+                <div className="">
+                <div className="text-[#1A2B3D] font-semibold">
+                    {trip.arrivalTime}
+                  </div>
+                  <div className="text-[#5A6573] text-sm leading-5 font-normal">
+                    {trip.arrivalDate}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-stretch space-x-3">
+              <div className="flex flex-col items-center">
+                <div className="flex-grow w-0.5 bg-[#D8E1EB]"></div>
+                <Image
+                  src={"https://i.ibb.co/1GLfTBJ/plane-icon.png"}
+                  alt={"kkk"}
+                  width={32}
+                  height={32}
+                />
+                <div className="flex-grow w-0.5 bg-[#D8E1EB]"></div>
+              </div>
+              <div className="grid grid-cols-3 gap-4 grow py-4">
+                <div className="space-y-[6px]">
+                  <div className="text-[#3E4957] text-sm leading-[18px] font-medium">
+                    {trip.airlines}
+                  </div>
+                  <div className="text-[#5A6573] text-sm leading-[18px]">
+                    {trip.flight}
+                  </div>
+                </div>
+                <div className="col-span-2 space-y-[6px]">
+                <div className="text-[#5A6573] text-sm leading-[18px] font-medium">
+                    {trip.airbusIndustries}
+                  </div>
+                  <div className="text-[#5A6573] text-sm leading-[18px] space-x-1">
+                    <span>Class :</span>
+                    <span className="font-medium">{trip.class}</span>
+                  </div>
+                </div>
+                {trip.stoppageMessage && (
+                  <div className="col-span-3 border border-[#FFE1C2] bg-[#FFEEDB] py-2 px-3 rounded-[6px] flex items-center space-x-2">
+                                    <Image
+                  src={"https://i.ibb.co/Thd9hJd/Warning.png"}
+                  alt={"Warning"}
+                  width={25}
+                  height={20}
+                />
+                    <span className=" text-[#3E4957] text-xs leading-4">{trip.stoppageMessage}</span></div>
+                )}
+              </div>
+            </div>
+            {trip?.layover?.length > 0 &&
+              trip?.layover?.map((lay, index) => (
+                <div
+                  className="flex items-center space-x-3 w-full pt-1"
+                  key={index}
+                >
+                  <div className="flex items-center justify-center">
+                    <Image
+                      src={"https://i.ibb.co/CJ37n1n/Location-Icon1.png"}
+                      alt="icon"
+                      width={32}
+                      height={36}
+                    />
+                  </div>
+                  <div className="bg-[#F5F7FA] text-[13px] leading-[18px] grow px-4 pt-[10px] pb-3 flex items-center justify-between">
+                    <div className="font-medium space-x-1 text-[#1A2B3D]">
+                      <span>Layover at</span>
+                      <span>{lay?.layoverCity}:</span>
+                      <span>{lay?.layoverTime}</span>
+                    </div>
+                    <div className="font-medium space-x-1 text-[#1A2B3D]">
+                      <span>{lay?.layoverTerminalName}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ))}
+        <div className="flex items-center space-x-3 w-full">
+          <div className="flex items-center justify-center w-8 h-9">
+            <Image
+              src={"https://i.ibb.co/8KHxhY9/Location-Icon.png"}
+              alt="icon"
+              width={32}
+              height={36}
+            />
+          </div>
+          <div className="bg-[#F5F7FA] text-[13px] leading-[18px] grow px-4 pt-[10px] pb-3 flex items-center justify-between">
+            <div className="font-medium space-x-1 text-[#1A2B3D]">
+              <span>Destination at</span>
+              <span>{flight.toCity}</span>
+            </div>
+            <div className="font-medium space-x-1 text-[#5A6573]">
+              <span>{flight.toTerminal}</span>
+              <span>:</span>
+              <span className="font-normal">{flight.toTerminalName}</span>
+            </div>
           </div>
         </div>
       </div>
