@@ -1,10 +1,9 @@
 import { FlightDetailsData } from "@/json";
-import FlightDetailsCard from "@/components/booking/flight-details/FlightDetailsCard";
+import FlightDetailsCard from "@/components/booking/flight-details/flight-Details-Card";
 
 const FlightDetails = () => (
-  <div className="overflow-y-auto">
     <FlightDetailsCard flight={FlightDetailsData[0]} />
-  </div>
+
 );
 
 export default FlightDetails;
