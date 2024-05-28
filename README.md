@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Overview
+
+The goal of this project was to demonstrate proficiency in HTML and CSS by converting a Figma design into a functional React/Next.js application. The design includes multiple components and layout structures, showcasing skills in modern web development practices. The task was part of the initial stage of the interview process for ShareTrip Limited [ShareTrip Ltd](https://sharetrip.net/ "https://sharetrip.net/").
+
+
+## About ShareTrip
+
+[ShareTrip](https://sharetrip.net/ "https://sharetrip.net/") is Bangladesh's leading online travel aggregator, dedicated to making travel easier for people of all ages. With an innovative mobile app, ShareTrip offers seamless booking of flights, hotels, and holiday packages, along with exciting games and real rewards like free trips and air tickets. With over 250 experts, ShareTrip ensures the best travel rates and exclusive deals, fulfilling your travel needs efficiently.
+
+
+### Live Demo
+
+You can view the live demo of this project [here](https://sharetrip-ota.vercel.app/ "https://sharetrip-ota.vercel.app/").
+
+
+## Technologies Used
+
+- React.js
+- Next.js
+- Tailwind CSS
+- Material UI (MUI)
+- Vercel (for deployment)
+- Figma (for design reference)
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/rubiyet/sharetrip-ota.git
+cd sharetrip-ota
+```
+
+2. **Install dependencies:**
+
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using yarn:
+
+   ```bash
+   yarn install
+   ```
+
+### Running the Application
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or with yarn:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The application will be available at http://localhost:3000.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+├── app
+│   ├── layout.js
+│   ├── page.js
+│   └── globals.css
+├── assets
+│   └── images
+│       └── icon.png
+├── components
+│   ├── booking
+│   │   ├── filters
+│   │   │   └── index.js
+│   │   ├── flight-details
+│   │   │   ├── flight-details-card
+│   │   │   │   ├── FlightDetailsFirstCol.js
+│   │   │   │   ├── FlightDetailsRow.js
+│   │   │   │   └── FlightDetailsSecondCol.js
+│   │   │   └── index.js
+│   │   └── index.js
+│   ├── common
+│   │   ├── layout
+│   │   │   └── navbar
+│   │   │       └── index.js
+│   │   └── others
+│   │       └── breadcrumbs.js
+└── json
+    ├── flight-details.json
+    └── index.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The project is deployed on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
