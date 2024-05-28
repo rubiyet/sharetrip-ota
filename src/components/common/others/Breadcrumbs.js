@@ -5,7 +5,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 const CustomBreadcrumbs = ({ breadcrumbs }) => (
   <Breadcrumbs
     separator={<NavigateNextIcon fontSize="small" />}
-    className="text-[#5A6573] text-[13px]"
+    className="text-color-200 text-[13px]"
   >
     {breadcrumbs}
   </Breadcrumbs>

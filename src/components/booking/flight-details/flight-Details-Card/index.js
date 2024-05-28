@@ -8,18 +8,18 @@ import FlightDetailsSecondCol from "@/components/booking/flight-details/flight-D
 const FlightDetailsCard = ({ flight }) => {
   return (
     <div>
-      <div className="flex justify-between items-center bg-white px-5 py-4 rounded-t-lg border-b border-[#EBF0F5]">
+      <div className="flex justify-between items-center bg-white px-5 py-4 rounded-t-lg border-b border-color-800">
         <div className="flex items-center space-x-4">
-          <div className="bg-[#1882FF] rounded-full w-6 h-6 flex items-center justify-center font-semibold text-sm text-white">
+          <div className="bg-color-600 rounded-full w-6 h-6 flex items-center justify-center font-semibold text-sm text-white">
             1
           </div>
           <div>
-            <div className="flex items-center text-[#1A2B3D] text-lg font-semibold space-x-1 leading-[26px]">
+            <div className="flex items-center text-color-100 text-lg font-semibold space-x-1 leading-[26px]">
               <span>{flight.fromIata}</span>
               <HiArrowRight />
               <span>{flight.toIata}</span>
             </div>
-            <div className="flex items-center text-[#5A6573] text-[13px] space-x-1 leading-[18px]">
+            <div className="flex items-center text-color-200 text-[13px] space-x-1 leading-[18px]">
               <span>{flight.type}</span>
               <BsDot />
               <span>{flight.date}</span>
@@ -28,7 +28,7 @@ const FlightDetailsCard = ({ flight }) => {
             </div>
           </div>
         </div>
-        <div className="text-xs font-medium leading-4 text-[#1882FF] bg-[#E8F3FF] p-2 rounded-full">
+        <div className="text-xs font-medium leading-4 text-color-600 bg-color-700 p-2 rounded-full">
           {flight.totalDuration}
         </div>
       </div>
@@ -43,12 +43,13 @@ const FlightDetailsCard = ({ flight }) => {
         {flight.trip.map((trip, index) => (
           <div key={index}>
             <div className="flex space-x-3">
-              <Image
-                src={"https://i.ibb.co/MRNy6RX/" + flight.airlines + ".png"}
-                alt={flight.airlines}
-                width={32}
-                height={32}
-              />
+                <Image
+                  src={"https://i.ibb.co/MRNy6RX/" + flight.airlines + ".png"}
+                  alt={flight.airlines}
+                  width={32}
+                  height={32}
+                  className="w-8 h-8"
+                />
               <div className="grid grid-cols-3 gap-3 grow">
                 <FlightDetailsFirstCol
                   title={`${trip.departureIata} - ${trip.arrivalIata}`}
@@ -66,14 +67,15 @@ const FlightDetailsCard = ({ flight }) => {
             </div>
             <div className="flex items-stretch space-x-3">
               <div className="flex flex-col items-center">
-                <div className="flex-grow w-0.5 bg-[#D8E1EB]"></div>
+                <div className="flex-grow w-0.5 bg-color-1000"></div>
                 <Image
                   src={"https://i.ibb.co/1GLfTBJ/plane-icon.png"}
-                  alt={"kkk"}
+                  alt={"icon"}
                   width={32}
                   height={32}
+                  className="w-8 h-8"
                 />
-                <div className="flex-grow w-0.5 bg-[#D8E1EB]"></div>
+                <div className="flex-grow w-0.5 bg-color-1000"></div>
               </div>
               <div className="grid grid-cols-3 gap-4 grow py-4">
                 <FlightDetailsSecondCol
@@ -85,14 +87,15 @@ const FlightDetailsCard = ({ flight }) => {
                   flightClass={trip.class}
                 />
                 {trip.stoppageMessage && (
-                  <div className="col-span-3 border border-[#FFE1C2] bg-[#FFEEDB] py-2 px-3 rounded-[6px] flex items-center space-x-2">
+                  <div className="col-span-3 border border-color-300 bg-color-400 py-2 px-3 rounded-[6px] flex items-center space-x-2">
                     <Image
                       src={"https://i.ibb.co/Thd9hJd/Warning.png"}
                       alt={"Warning"}
-                      width={25}
+                      width={20}
                       height={20}
+                      className="w-5 h-5"
                     />
-                    <span className=" text-[#3E4957] text-xs leading-4">
+                    <span className="text-color-500 text-xs leading-4">
                       {trip.stoppageMessage}
                     </span>
                   </div>
